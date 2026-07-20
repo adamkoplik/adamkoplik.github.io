@@ -2027,6 +2027,20 @@ html[data-bs-theme="dark"] #badge-vscode {
   background: #003366;
   color: ivory;
 }
+/* Claude */
+#badge-claude {
+  background: #d97706;
+}
+
+/* ChatGPT */
+#badge-chatgpt {
+  background: #10a37f;
+}
+
+/* Google Gemini */
+#badge-gemini {
+  background: linear-gradient(135deg, #4285F4, #8E44AD, #EA4335);
+}
 
 .icon {
   width: 18px;

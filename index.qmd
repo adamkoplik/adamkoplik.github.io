@@ -176,6 +176,21 @@ format:
   <span class="badge" id="badge-git"><i class="fa-brands fa-github"></i> Git</span>
   <span class="badge" id="badge-vscode"><img src="/assets/icons/vscode.svg" alt="VS Code" class="icon"> VS Code</span>
   <span class="badge" id="badge-wordpress"><i class="fa-brands fa-wordpress"></i> WordPress</span>
+<span class="badge badge-wordpress">
+    <i class="fa-brands fa-wordpress"></i> WordPress
+</span>
+
+<span class="badge badge-claude">
+    <i class="fa-solid fa-robot"></i> Claude
+</span>
+
+<span class="badge badge-chatgpt">
+    <i class="fa-solid fa-comment-dots"></i> ChatGPT
+</span>
+
+<span class="badge badge-gemini">
+    <i class="fa-solid fa-star"></i> Google Gemini
+</span>
 </div>
 </div>
 </div>
