@@ -181,15 +181,15 @@ format:
 </span>
 
 <span class="badge badge-claude">
-    <i class="fa-solid fa-robot"></i> Claude
+    <img src="/assets/icons/claude.svg" alt="Claude" class="icon"> Claude
 </span>
 
 <span class="badge badge-chatgpt">
-    <i class="fa-solid fa-comment-dots"></i> ChatGPT
+    <img src="/assets/icons/chatGPT.svg" alt="ChatGPT" class="icon"> ChatGPT
 </span>
 
 <span class="badge badge-gemini">
-    <i class="fa-solid fa-star"></i> Google Gemini
+    <img src="/assets/icons/gemini.svg" alt="Gemini" class="icon"> Google Gemini
 </span>
 </div>
 </div>
