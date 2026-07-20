@@ -79,8 +79,16 @@ format:
 <h3>Work Experience</h3>
 
 <div class="experience-card">
+  <h4>TerraPact</h4>
+  <p><strong>Senior Analyst, Data Intelligence </strong><small> September 2025 — Present </small></p>
+  <ul>
+    <li>Manage strategic infrastructure investment projects using advanced data analytics and geospatial methodologies, overseeing remote vendor teams and leading quality assurance and quality control (QA/QC) efforts.</li>
+    <li>Developed a convolutional neural network (CNN) using satellite imagery to identify potential infrastructure targets significantly faster than previous methods, while implementing AI-driven workflows that automated external processes and accelerated data cleaning.</li>
+    <li>Led the integration of Salesforce and OneDrive data into a centralized remote SQL Server database, directing data migration, cleaning, and analysis to improve data accessibility and operational efficiency.</li>
+  </ul>
+  
   <h4>Murray’s Chicken / MB Food Processing Inc.</h4>
-  <p><strong>Data Analyst (Marketing & Operations) </strong><small> May 2025 — Present </small></p>
+  <p><strong>Marketing & Operations Analyst </strong><small> May 2025 — September 2025 </small></p>
   <ul>
     <li>Developed SEO and marketing strategies, testing copy and site structure changes to improve search visibility and customer engagement.</li>
     <li>Built internal dashboards in Excel and R to forecast sales and track performance against operational targets.</li>

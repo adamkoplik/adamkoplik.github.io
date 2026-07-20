@@ -122,14 +122,21 @@ format:
 
 </div>
 
-## Academic Writing
+## Writing
 
 <div class="grid">
 
 <div class="project-card">
+  <a href="projects/knicks/index.html" class="project-card-link">
+    <img src="projects/knicks/knicks" alt="What an Idiot: On the 2026 New York Knicks and Learning How to Believe Again">
+    <h3>What an Idiot: On the 2026 New York Knicks and Learning How to Believe Again</h3>
+  </a>
+</div>
+
+<div class="project-card">
   <a href="projects/DTA/index.html" class="project-card-link">
-    <img src="projects/DTA/DTA.jpg" alt="Skull Valley Band Nuclear Dump: Tribal Sovereignty’s Role in Environmental Justice ">
-    <h3>Skull Valley Band Nuclear Dump: Tribal Sovereignty’s Role in Environmental Justice </h3>
+    <img src="projects/DTA/DTA.jpg" alt="Skull Valley Band Nuclear Dump: Tribal Sovereignty’s Role in Environmental Justice">
+    <h3>Skull Valley Band Nuclear Dump: Tribal Sovereignty’s Role in Environmental Justice</h3>
   </a>
 </div>
 
