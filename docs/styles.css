@@ -2028,6 +2028,51 @@ html[data-bs-theme="dark"] #badge-vscode {
   color: ivory;
 }
 
+/* Claude */
+html[data-bs-theme="light"] #badge-claude {
+  background: #d97706;
+  color: ivory;
+}
+html[data-bs-theme="light"] #badge-claude .icon {
+  filter: brightness(0) invert(1);
+}
+
+/* ChatGPT */
+/* ChatGPT */
+html[data-bs-theme="light"] #badge-chatgpt {
+  background: black;
+  color: ivory;
+}
+
+html[data-bs-theme="light"] #badge-chatgpt .icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Google Gemini */
+html[data-bs-theme="light"] #badge-gemini {
+  background: linear-gradient(135deg, #4285F4, #8E44AD, #EA4335);
+}
+/* Claude */
+html[data-bs-theme="dark"] #badge-claude {
+  background: white;
+  color: #d97706;
+}
+html[data-bs-theme="dark"] #badge-claude .icon {
+  filter: brightness(0) saturate(100%) invert(48%) sepia(96%) saturate(1200%) hue-rotate(7deg) brightness(92%) contrast(95%);
+}
+
+/* ChatGPT */
+html[data-bs-theme="dark"] #badge-chatgpt {
+  background: white;
+  color:black;
+  fill: black;       /* Changes the inside color */
+}
+
+/* Google Gemini */
+html[data-bs-theme="dark"] #badge-gemini {
+  background: linear-gradient(135deg, #4285F4, #8E44AD, #EA4335);
+}
+
 .icon {
   width: 18px;
   height: 18px;

@@ -16,8 +16,13 @@ format:
   <img src="LinkedIN.jpg" alt="Photo of Adam Koplik" class = "profile-image" style="max-width: 300px; border-radius: 12px; margin-left: 20px; order: 0; width: 100%; border: 1px solid ivory; box-shadow: #9c55f1 0px 3px 8px;;">
   <div style="flex: 1;">
 <p>
-  My name is Adam Koplik. I'm a data analyst with a background in economics, environmental research, and marketing analytics, bringing recent hands-on experience across domains. I offer strong skills in data analysis and visualization through Tableau, Excel, Python/R, for clear, persuasive communication. My recent internship involved building a financial simulation model and dynamic dashboards to forecast how commodity price changes would impact gross profit margins. I'm seeking a role to apply data expertise to solve complex problems as both an analyst and communicator.
-</p>
+My name is Adam Koplik. I'm a 23-year-old Hamilton College from New Paltz, New York, currently residing in Manhattan. I am a research and data analyst with experience spanning infrastructure-focused geospatial analytics projects, real estate
+economics, environmental research, financial modeling, and marketing analytics. Experienced in transforming complex
+spatial and public datasets into actionable intelligence using Python, R, SQL, Tableau, Excel, and AI-assisted workflows.
+Built convolutional neural networks (CNNs) for satellite imagery analysis, supported infrastructure development through
+geospatial analytics and data integration, and led QA/QC and process improvement initiatives to enhance data quality and
+operational efficiency. Strong researcher and technical communicator with a passion for uncovering complex information,
+improving research methodologies, and translating data into strategic insights.</p>
 
 <p>
   My résumé is below along with a contact form. For info on all of my projects and my social feeds, go to the menu above. Thank you for taking the time to learn about me!
@@ -86,7 +91,9 @@ format:
     <li>Developed a convolutional neural network (CNN) using satellite imagery to identify potential infrastructure targets significantly faster than previous methods, while implementing AI-driven workflows that automated external processes and accelerated data cleaning.</li>
     <li>Led the integration of Salesforce and OneDrive data into a centralized remote SQL Server database, directing data migration, cleaning, and analysis to improve data accessibility and operational efficiency.</li>
   </ul>
-  
+  </div>
+<div class="experience-card">
+
   <h4>Murray’s Chicken / MB Food Processing Inc.</h4>
   <p><strong>Marketing & Operations Analyst </strong><small> May 2025 — September 2025 </small></p>
   <ul>
@@ -176,21 +183,9 @@ format:
   <span class="badge" id="badge-git"><i class="fa-brands fa-github"></i> Git</span>
   <span class="badge" id="badge-vscode"><img src="/assets/icons/vscode.svg" alt="VS Code" class="icon"> VS Code</span>
   <span class="badge" id="badge-wordpress"><i class="fa-brands fa-wordpress"></i> WordPress</span>
-<span class="badge badge-wordpress">
-    <i class="fa-brands fa-wordpress"></i> WordPress
-</span>
-
-<span class="badge badge-claude">
-    <img src="/assets/icons/claude.svg" alt="Claude" class="icon"> Claude
-</span>
-
-<span class="badge badge-chatgpt">
-    <img src="/assets/icons/chatGPT.svg" alt="ChatGPT" class="icon"> ChatGPT
-</span>
-
-<span class="badge badge-gemini">
-    <img src="/assets/icons/gemini.svg" alt="Gemini" class="icon"> Google Gemini
-</span>
+  <span class="badge" id="badge-claude"><img src="/assets/icons/claude.svg" alt="Claude" class="icon"> Claude</span>
+  <span class="badge" id="badge-chatgpt"><img src="/assets/icons/chatGPT.svg" alt="ChatGPT" class="icon"> ChatGPT</span>
+  <span class="badge" id="badge-gemini"><img src="/assets/icons/gemini.svg" alt="Gemini" class="icon"> Google Gemini</span>
 </div>
 </div>
 </div>

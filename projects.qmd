@@ -128,7 +128,7 @@ format:
 
 <div class="project-card">
   <a href="projects/knicks/index.html" class="project-card-link">
-    <img src="projects/knicks/knicks" alt="What an Idiot: On the 2026 New York Knicks and Learning How to Believe Again">
+    <img src="projects/knicks/knicks.jpg" alt="What an Idiot: On the 2026 New York Knicks and Learning How to Believe Again">
     <h3>What an Idiot: On the 2026 New York Knicks and Learning How to Believe Again</h3>
   </a>
 </div>
