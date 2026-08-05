@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="en" data-bs-theme="light"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview — Adam Koplik</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/flatly/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+<!-- Injected into <head> on every page via _quarto.yml (include-in-header).
+     Three jobs: load fonts, replace the theme toggle, run the motion layer. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------------------------------------------------------------------
+     Theme toggle
+     Quarto owns the actual theme switch (it swaps Bootstrap stylesheets and
+     sets body.quarto-dark). Rather than fight it, we hide its toggle, render
+     our own, forward clicks, and mirror the resulting state onto
+     <html data-bs-theme> so styles.css tokens follow along.
+     --------------------------------------------------------------------- */
+
+  var SUN =
+    '<svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>';
+
+  var MOON =
+    '<svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<path d="M20.5 13.4A8.3 8.3 0 1 1 10.6 3.5a6.5 6.5 0 0 0 9.9 9.9z"/></svg>';
+
+  function isDark() {
+    return document.body.classList.contains("quarto-dark");
+  }
+
+  function syncTheme(button) {
+    var dark = isDark();
+    document.documentElement.setAttribute("data-bs-theme", dark ? "dark" : "light");
+    if (button) {
+      button.innerHTML = dark ? SUN : MOON;
+      button.setAttribute(
+        "aria-label",
+        dark ? "Switch to light mode" : "Switch to dark mode"
+      );
+    }
+  }
+
+  function initThemeToggle() {
+    var native = document.querySelector("a.quarto-color-scheme-toggle");
+
+    var button = document.createElement("button");
+    button.id = "color-toggle";
+    button.type = "button";
+
+    if (native) {
+      native.parentNode.insertBefore(button, native);
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        native.click();
+      });
+    }
+
+    syncTheme(button);
+
+    // Quarto flips the body class; watch for it instead of guessing.
+    new MutationObserver(function () {
+      syncTheme(button);
+    }).observe(document.body, { attributes: true, attributeFilter: ["class"] });
+  }
+
+  /* ---------------------------------------------------------------------
+     Scroll reveal
+     Content fades up once as it enters the viewport. Items inside the same
+     grid are staggered slightly so a row doesn't pop in all at once.
+     --------------------------------------------------------------------- */
+
+  var REVEAL_SELECTOR = [
+    ".intro",
+    ".experience-card",
+    ".education-card",
+    ".project-card",
+    ".feed-grid > .card",
+    "main h2",
+    "main form",
+  ].join(",");
+
+  function initReveal() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var targets = Array.prototype.slice.call(
+      document.querySelectorAll(REVEAL_SELECTOR)
+    );
+    if (!targets.length) return;
+
+    if (reduced || !("IntersectionObserver" in window)) {
+      targets.forEach(function (el) {
+        el.classList.add("is-visible", "reveal-done");
+      });
+      return;
+    }
+
+    // Stagger siblings within a shared parent.
+    var seen = new Map();
+    targets.forEach(function (el) {
+      el.setAttribute("data-reveal", "");
+      var parent = el.parentNode;
+      var index = seen.get(parent) || 0;
+      seen.set(parent, index + 1);
+      if (index > 0) {
+        el.style.setProperty("--reveal-delay", Math.min(index, 6) * 55 + "ms");
+      }
+    });
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          el.classList.add("is-visible");
+          observer.unobserve(el);
+          // Hand the element back to its normal hover transitions.
+          window.setTimeout(function () {
+            el.classList.add("reveal-done");
+            el.style.removeProperty("--reveal-delay");
+          }, 900);
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+    );
+
+    targets.forEach(function (el) {
+      observer.observe(el);
+    });
+  }
+
+  /* ---------------------------------------------------------------------
+     Header hairline appears only once the page has scrolled.
+     --------------------------------------------------------------------- */
+
+  function initHeaderState() {
+    var header = document.querySelector("#quarto-header");
+    if (!header) return;
+
+    var ticking = false;
+    function update() {
+      header.classList.toggle("is-scrolled", window.scrollY > 8);
+      ticking = false;
+    }
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(update);
+      },
+      { passive: true }
+    );
+
+    update();
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    initThemeToggle();
+    initReveal();
+    initHeaderState();
+  });
+})();
+</script>
+
+</head><body class="quarto-light">
+<header id="quarto-header"><nav class="navbar navbar-expand-lg" style="padding:.6rem 1.5rem;display:flex;align-items:center;gap:1rem">
+<a class="navbar-brand" href="#">Adam Koplik</a>
+<a class="nav-link active" href="#">Home</a><a class="nav-link" href="#">Projects</a><a class="nav-link" href="#">Feed</a>
+<span style="margin-left:auto"></span><a class="quarto-color-scheme-toggle" href="#">t</a>
+</nav></header>
+<div id="quarto-content" style="max-width:960px;margin:0 auto;padding:2rem 1.5rem">
+<main><h1 class="title">Adam Koplik</h1>
+<div class="intro">
+<div class="intro-body">
+<p><span class="intro-lead">My name is Adam Koplik. I’m a 23-year-old Hamilton College graduate from New Paltz, New York, currently residing in Manhattan.</span></p>
+<p>I am a research and data analyst with experience spanning infrastructure-focused geospatial analytics, real estate economics, environmental research, financial modeling, and marketing analytics — transforming complex spatial and public datasets into actionable intelligence using Python, R, SQL, Tableau, Excel, and AI-assisted workflows. I’ve built convolutional neural networks for satellite imagery analysis, supported infrastructure development through geospatial analytics and data integration, and led QA/QC and process improvement initiatives to enhance data quality and operational efficiency. I’m a strong researcher and technical communicator with a passion for uncovering complex information, improving research methodologies, and translating data into strategic insights.</p>
+<p>My résumé is below, along with a contact form. Projects and social feeds live in the menu above. Thank you for taking the time to learn about me.</p>
+</div>
+<div class="intro-figure">
+<p><img src="LinkedIN.jpg" class="profile-image" data-fig-alt="Portrait of Adam Koplik" /></p>
+</div>
+</div>
+<section id="résumé" class="level2">
+<h2>Résumé</h2>
+<div class="resume-column">
+<section id="work-experience" class="level3">
+<h3>Work Experience</h3>
+<section id="terrapact" class="level4 experience-card">
+<h4>TerraPact</h4>
+<p><strong>Senior Analyst, Data Intelligence</strong> <small>September 2025 — Present</small></p>
+<ul>
+<li>Manage strategic infrastructure investment projects using advanced data analytics and geospatial methodologies, overseeing remote vendor teams and leading quality assurance and quality control (QA/QC) efforts.</li>
+<li>Developed a convolutional neural network (CNN) using satellite imagery to identify potential infrastructure targets significantly faster than previous methods, while implementing AI-driven workflows that automated external processes and accelerated data cleaning.</li>
+<li>Led the integration of Salesforce and OneDrive data into a centralized remote SQL Server database, directing data migration, cleaning, and analysis to improve data accessibility and operational efficiency.</li>
+</ul>
+</section>
+<section id="murrays-chicken-mb-food-processing-inc." class="level4 experience-card">
+<h4>Murray’s Chicken / MB Food Processing Inc.</h4>
+<p><strong>Marketing &amp; Operations Analyst</strong> <small>May 2025 — September 2025</small></p>
+<ul>
+<li>Developed SEO and marketing strategies, testing copy and site structure changes to improve search visibility and customer engagement.</li>
+<li>Built internal dashboards in Excel and R to forecast sales and track performance against operational targets.</li>
+<li>Analyzed customer and web traffic data to inform targeted outreach and marketing content.</li>
+</ul>
+<p><a href="projects/murrays-chicken-digital-marketing/index.html">View project →</a></p>
+<p><strong>Quantitative Financial Analyst</strong> <small>May 2024 — August 2024</small></p>
+<ul>
+<li>Created a financial simulation model in R to forecast how changes in feed prices would impact gross profit margins.</li>
+<li>Built interactive dashboards in R Shiny to visualize scenarios for hedging and pricing decisions, used by executives and an external hedging partner.</li>
+<li>Modeled commodity price trends using time-series forecasts to guide procurement timing and maintain cost stability.</li>
+</ul>
+<p><a href="projects/commodity-cost-impacts/index.html">View project →</a></p>
+</section>
+<section id="hamilton-college" class="level4 experience-card">
+<h4>Hamilton College</h4>
+<p><strong>Environmental Data Science Research Assistant</strong> <small>June 2023 — May 2024</small></p>
+<ul>
+<li>Co-authored a peer-reviewed publication on Arctic land cover change using satellite data and deep learning.</li>
+<li>Built and trained convolutional neural networks (CNNs) for geospatial classification tasks in R and Python.</li>
+<li>Conducted statistical modeling and image analysis to evaluate environmental risk over time.</li>
+</ul>
+<p><a href="projects/land-cover/index.html">View project →</a></p>
+</section>
+<section id="ulster-county-government" class="level4 experience-card">
+<h4>Ulster County Government</h4>
+<p><strong>Climate Data Analyst</strong> <small>June 2023 — August 2023</small></p>
+<ul>
+<li>Co-led a team of 18 interns, overseeing eight environmental projects from concept to presentation for the county’s state senator.</li>
+<li>Designed ArcGIS dashboards to consolidate data on recycling, renewable energy, and public transportation initiatives.</li>
+<li>Incorporated demographic and health metrics to highlight community benefits and inform policy recommendations.</li>
+</ul>
+<p><a href="projects/ulster-county-climate-dashboards/index.html">View project →</a></p>
+</section>
+<section id="diamond-digest" class="level4 experience-card">
+<h4>Diamond Digest</h4>
+<p><strong>Staff Writer, Analyst</strong> <small>October 2018 — Present</small></p>
+<ul>
+<li>Produce analytically driven baseball content, including advanced metrics analysis for MLB teams.</li>
+<li>Co-manage a social media account with 6,000+ followers; contribute to podcasts and live broadcasts.</li>
+</ul>
+</section>
+</section>
+<section id="technical-skills" class="level3">
+<h3>Technical Skills</h3>
+<div class="experience-card">
+<div class="skill-section">
+<h3>
+Programming
+</h3>
+<p><span id="badge-python" class="badge"><i class="fa-brands fa-python"></i> Python</span> <span id="badge-r" class="badge"><i class="fa-brands fa-r-project"></i> R</span> <span id="badge-sql" class="badge"><i class="fa-solid fa-database"></i> SQL</span> <span id="badge-html" class="badge"><i class="fa-solid fa-code"></i> HTML</span> <span id="badge-css" class="badge"><i class="fa-brands fa-css3-alt"></i> CSS</span></p>
+</div>
+</div>
+<div class="experience-card">
+<div class="skill-section">
+<h3>
+Modeling &amp; Analysis
+</h3>
+<p><span id="badge-machine-learning" class="badge"><i class="fa-solid fa-robot"></i> Machine Learning</span> <span id="badge-predictive" class="badge"><i class="fa-solid fa-chart-line"></i> Predictive / Time-Series Modeling</span> <span id="badge-linear-algebra" class="badge"><i class="fa-solid fa-square-root-variable"></i> Linear Algebra</span> <span id="badge-linear-optimization" class="badge"><i class="fa-solid fa-sliders"></i> Linear Optimization</span></p>
+</div>
+</div>
+<div class="experience-card">
+<div class="skill-section">
+<h3>
+Visualization &amp; Mapping
+</h3>
+<p><span id="badge-rstudio" class="badge"><i class="fa-brands fa-r-project"></i> R Shiny</span> <span id="badge-tableau" class="badge"><img src="/assets/icons/tableau.svg" alt="" class="icon"> Tableau</span> <span id="badge-matplotlib" class="badge"><i class="fa-brands fa-python"></i> Matplotlib</span> <span id="badge-arcgis" class="badge"><i class="fa-solid fa-earth-americas"></i> ArcGIS</span></p>
+</div>
+</div>
+<div class="experience-card">
+<div class="skill-section">
+<h3>
+Tools &amp; Platforms
+</h3>
+<p><span id="badge-excel" class="badge"><i class="fa-solid fa-file-excel"></i> Excel</span> <span id="badge-git" class="badge"><i class="fa-brands fa-github"></i> Git</span> <span id="badge-vscode" class="badge"><img src="/assets/icons/vscode.svg" alt="" class="icon"> VS Code</span> <span id="badge-wordpress" class="badge"><i class="fa-brands fa-wordpress"></i> WordPress</span> <span id="badge-claude" class="badge"><img src="/assets/icons/claude.svg" alt="" class="icon"> Claude</span> <span id="badge-chatgpt" class="badge"><img src="/assets/icons/chatGPT.svg" alt="" class="icon"> ChatGPT</span> <span id="badge-gemini" class="badge"><img src="/assets/icons/gemini.svg" alt="" class="icon"> Google Gemini</span></p>
+</div>
+</div>
+</section>
+<section id="education" class="level3">
+<h3>Education</h3>
+<div class="education-card">
+<div>
+<pre><code>&lt;h4&gt;Hamilton College &lt;small&gt;May 2025&lt;/small&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Bachelor of Arts — Data Science&lt;/strong&gt;&lt;/p&gt;</code></pre>
+</div>
+<p><img src="hamlogo.png" alt="Hamilton College"></p>
+</div>
+</section>
+</div>
+</section>
+<section id="recent-work" class="level2">
+<h2>Recent Work</h2>
+<div class="grid">
+<div class="project-card">
+<a href="projects/prop-rep/index.html" class="project-card-link"> <img src="projects/prop-rep/prop-rep.jpg" alt="">
+<h3>
+The Case for Proportional Representation in America
+</h3>
+<p></a></p>
+</div>
+<div class="project-card">
+<a href="projects/how-zohran-won/index.html" class="project-card-link"> <img src="projects/how-zohran-won/how-zohran-won.jpg" alt="">
+<h3>
+How Zohran Won
+</h3>
+<p></a></p>
+</div>
+<div class="project-card">
+<a href="projects/murrays-chicken-digital-marketing/index.html" class="project-card-link"> <img src="projects/murrays-chicken-digital-marketing/murrays-chicken-digital-marketing.jpg" alt="">
+<h3>
+Murray’s Chicken Digital Marketing
+</h3>
+<p></a></p>
+</div>
+<div class="project-card">
+<a href="projects.html" class="project-card-link"> <img src="projects/all-projects.jpg" alt="">
+<h3>
+View all projects
+</h3>
+<p></a></p>
+</div>
+</div>
+</section>
+<section id="get-in-touch" class="level2">
+<h2>Get in Touch</h2>
+<p>If you’re interested in working together, collaborating on a project, or just connecting — reach out anytime. Use the form below and I’ll get back to you soon.</p>
+<form action="https://formspree.io/f/meozjwgg" method="POST">
+<p><label for="name">Name</label> <input type="text" id="name" name="name" required></p>
+<p><label for="email">Email</label> <input type="email" id="email" name="_replyto" required></p>
+<label for="message">Message</label>
+<textarea id="message" name="message" rows="5" required></textarea>
+<button type="submit">
+Send message
+</button>
+</form>
+</section>
+
+</main></div>
+<footer class="nav-footer">© 2026 Adam Koplik</footer>
+<script>
+document.querySelector('.quarto-color-scheme-toggle').addEventListener('click',e=>{e.preventDefault();
+ document.body.classList.toggle('quarto-dark');document.body.classList.toggle('quarto-light');});
+</script>
+</body></html>

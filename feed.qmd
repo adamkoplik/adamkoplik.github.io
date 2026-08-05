@@ -4,7 +4,6 @@ format:
   html:
     page-layout: article
     toc: false
-    include-after-body: feed-scripts.html
 ---
 
 ## Social Media Feeds
@@ -12,50 +11,36 @@ format:
 <div class="feed-grid">
 
 <div class="card">
-<h2><img src="https://images.icon-icons.com/3041/PNG/512/medium_logo_icon_189223.png" alt="Medium logo" class="feed-logo"> Medium</h2>
-<a href="https://medium.com/@adam.jb.koplik" target="_blank">Visit my Medium profile →</a>
-<iframe src="https://rss.app/embed/v1/wall/aE9B7BIdx0sJq1cm" frameborder="0" width="100%" height="400" style="border:0;"></iframe>
+<h2><img src="https://images.icon-icons.com/3041/PNG/512/medium_logo_icon_189223.png" alt="" class="feed-logo"> Medium</h2>
+<a href="https://medium.com/@adam.jb.koplik" target="_blank" rel="noopener">Visit my Medium profile →</a>
+<iframe src="https://rss.app/embed/v1/wall/aE9B7BIdx0sJq1cm" title="Medium feed" loading="lazy" height="420"></iframe>
 </div>
 
 <div class="card">
-<h2><img src="https://static.vecteezy.com/system/resources/previews/016/716/467/non_2x/twitter-icon-free-png.png" alt="Twitter logo" class="feed-logo"> Twitter</h2>
-<a href="https://x.com/adamkoplik" target="_blank">Follow me on Twitter →</a>
-
-<iframe 
-  src="https://rss.app/embed/v1/list/ebMrEFff7WQV46sv"
-  frameborder="0" 
-  width="100%" 
-  height="500"
-  style="border:0;">
-</iframe>
+<h2><img src="https://static.vecteezy.com/system/resources/previews/016/716/467/non_2x/twitter-icon-free-png.png" alt="" class="feed-logo"> Twitter</h2>
+<a href="https://x.com/adamkoplik" target="_blank" rel="noopener">Follow me on Twitter →</a>
+<iframe src="https://rss.app/embed/v1/list/ebMrEFff7WQV46sv" title="Twitter feed" loading="lazy" height="420"></iframe>
 </div>
 
 <div class="card">
-<h2><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/500px-Instagram_icon.png" alt="IG logo" class="feed-logo"> Instagram</h2>
-<a href="https://instagram.com/adam.lytics" target="_blank">See my Instagram →</a>
-<iframe src="https://rss.app/embed/v1/wall/zjEdWXr0pBdvsJ4q" frameborder="0" width="100%" height="400" style="border:0;"></iframe>
+<h2><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/500px-Instagram_icon.png" alt="" class="feed-logo"> Instagram</h2>
+<a href="https://instagram.com/adam.lytics" target="_blank" rel="noopener">See my Instagram →</a>
+<iframe src="https://rss.app/embed/v1/wall/zjEdWXr0pBdvsJ4q" title="Instagram feed" loading="lazy" height="420"></iframe>
 </div>
 
 <div class="card">
-<h2><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/960px-LinkedIn_logo_initials.png" alt="IG logo" class="feed-logo"> LinkedIn</h2>
-  <a href="https://www.linkedin.com/in/adamkoplik/" target="_blank">Connect with me on LinkedIn →</a>
+<h2><img src="https://a.ltrbxd.com/logos/letterboxd-decal-dots-pos-rgb.svg" alt="" class="feed-logo"> Letterboxd</h2>
+<a href="https://letterboxd.com/adamkoplik/films/diary/" target="_blank" rel="noopener">Check out my Letterboxd while you're at it →</a>
+<iframe src="https://rss.app/embed/v1/wall/mevhBxbPIeGuQreE" title="Letterboxd diary" loading="lazy" height="420"></iframe>
+</div>
+
+<div class="card">
+<h2><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/960px-LinkedIn_logo_initials.png" alt="" class="feed-logo"> LinkedIn</h2>
+<a href="https://www.linkedin.com/in/adamkoplik/" target="_blank" rel="noopener">Connect with me on LinkedIn →</a>
 <div class="linkedin-card">
-<!-- LinkedIn badge -->
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="adamkoplik">
+<div class="LI-profile-badge" data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="adamkoplik"></div>
 </div>
 </div>
-</div>
 
-<div class="card">
-<h2><img src="https://a.ltrbxd.com/logos/letterboxd-decal-dots-pos-rgb.svg" alt="Letterboxd logo" class="feed-logo">Letterboxd</h2>
-  <a href="https://letterboxd.com/adamkoplik/films/diary/" target="_blank">Why not check out my Letterboxd while you're at it. →</a>
-
-<iframe width="900" height="1600" src="https://rss.app/embed/v1/wall/mevhBxbPIeGuQreE" frameborder="0"></iframe>
-
-
-</div>
-
-
-</div>
 </div>

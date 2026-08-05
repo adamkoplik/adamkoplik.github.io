@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Adam Koplik Portfolio"
+  title: "Adam Koplik"
   navbar:
     left:
       - text: "Home"
@@ -12,7 +12,7 @@ website:
         file: projects.qmd
       - text: "Feed"
         file: feed.qmd
-  page-footer: "© 2025 Adam Koplik"
+  page-footer: "© 2026 Adam Koplik"
 
 format:
   html:
@@ -20,9 +20,10 @@ format:
       light: flatly
       dark: cosmo
     toggle: true
-    include-in-header: _site/_includes/navbar.html
+    include-in-header: _includes/site.html
     css: styles.css
     highlight-style: dracula
+    anchor-sections: true
 
 resources:
   - projects/**

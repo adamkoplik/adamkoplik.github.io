@@ -1,1 +1,8 @@
 /.quarto/
+_site/
+_archive/
+.DS_Store
+.Rhistory
+venv/
+**/venv/
+~$*
